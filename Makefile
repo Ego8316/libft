@@ -3,54 +3,68 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
+#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/06 16:30:27 by vviterbo          #+#    #+#              #
-#    Updated: 2024/07/10 17:07:46 by vviterbo         ###   ########.fr        #
-                                                                              #
+#    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
+#    Updated: 2024/09/25 20:07:06 by ego              ###   ########.fr        #
+#                                                                              #
 # **************************************************************************** #
 
-CFILES	=	main.c					\
-			conversion_utils.c		\
-			ft_string_utils.c		\
-			ft_char_bool.c			\
-			file_parser.c			\
-			just_do_it.c			\
-			cl_parser.c				\
-			ft_string.c				\
-			arr_utils.c				\
-			ft_math.c				\
-			display.c				\
-			solver.c				\
-			coor.c					\
-			map.c
-SDIR	=	srcs/
-IDIR	=	includes/
-SRCS	=	$(addprefix $(SDIR), $(CFILES))
+SRCS	=	ft_isalnum.c	\
+			ft_isalpha.c	\
+			ft_isascii.c	\
+			ft_isdigit.c
 OBJS	=	$(SRCS:.c=.o)
+
+TDIR	=	tests/
+TMAIN	=	tests/test_libft.c
+TESTS	=	$(addprefix $(TDIR)test_, $(SRCS))
 
 CC		=	cc
 RM		=	rm -f
+AR		=	ar rcs
 CFLAGS	=	-Wall -Wextra -Werror
-NAME	=	bsq
+
+NAME	=	libft.a
+TNAME	=	test_libft
 
 all		:	$(NAME)
 
-$(NAME)	:	$(SRCS)
-			$(CC) $(CFLAGS) $(SRCS) -o $(NAME) -I $(IDIR)
+$(NAME)	:
+			echo "Compiling object files..."
+			$(CC) $(CFLAGS) -c $(SRCS) -I .
+			echo "Creating archive..."
+			$(AR) $(NAME) $(OBJS)
+			echo "Generating index..."
+			ranlib $(NAME)
+			echo "[OK] libft is ready !"
 
-debug	:	$(SRCS)
-			$(CC) $(CFLAGS) -fsanitize=address $(SRCS) -o $(NAME) -I $(IDIR)
+debug	:
+			echo "Compiling object files to debug memory issues..."
+			$(CC) $(CFLAGS) -fsanitize=address -c $(SRCS) -I .
+			echo "Creating archive..."
+			$(AR) $(NAME) $(OBJS)
+			echo "Generating index..."
+			ranlib $(NAME)
+			echo "[OK] AddressSanitizer is ready !"
+
+test	:	$(NAME)
+			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR)
+
+norm	:
+			norminette -R CheckForbiddenSourceHeader $(SRCS) libft.h
 
 clean	:
+			echo "Removing object files..."
 			$(RM) $(OBJS)
+			echo "[OK] All object files have been removed."
 
 fclean	:	clean
-			$(RM) $(NAME)
+			echo "Removing binary files..."
+			$(RM) $(NAME) $(TNAME)
+			echo "[OK] All binary files have been removed."
 
-re		:
-			make fclean
-			make all
+re		:	fclean all
 
 .PHONY	:	all clean fclean re
-.SILENT	:	all $(NAME) debug clean fclean re
+.SILENT	:	all $(NAME) $(OBJS) norm debug clean fclean re
