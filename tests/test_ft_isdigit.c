@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_isdigit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:02:10 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 16:55:25 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:35 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_isdigit(void)
 		if (isdigit(i) == ft_isdigit(i))
 			success++;
 		else
-			printf("%sft_isdigit.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, isdigit(i), ft_isdigit(i), RESET);
+			printf("%sft_isdigit.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, isdigit(i), ft_isdigit(i), RESET);
 	}
 	if (success == 500)
 	{

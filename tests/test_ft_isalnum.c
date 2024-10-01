@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_isalnum.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:09:41 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 16:55:30 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:20 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_isalnum(void)
 		if (isalnum(i) == ft_isalnum(i))
 			success++;
 		else
-			printf("%sft_isalnum.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, isalnum(i), ft_isalnum(i), RESET);
+			printf("%sft_isalnum.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, isalnum(i), ft_isalnum(i), RESET);
 	}
 	if (success == 500)
 	{

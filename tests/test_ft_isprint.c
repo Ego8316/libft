@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_isprint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:02:38 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 16:55:24 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:38 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_isprint(void)
 		if (isprint(i) == ft_isprint(i))
 			success++;
 		else
-			printf("%sft_isprint.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, isprint(i), ft_isprint(i), RESET);
+			printf("%sft_isprint.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, isprint(i), ft_isprint(i), RESET);
 	}
 	if (success == 500)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_tolower.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:28:30 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 17:29:21 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:44 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_tolower(void)
 		if (tolower(i) == ft_tolower(i))
 			success++;
 		else
-			printf("%sft_tolower.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, tolower(i), ft_tolower(i), RESET);
+			printf("%sft_tolower.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, tolower(i), ft_tolower(i), RESET);
 	}
 	if (success == 500)
 	{

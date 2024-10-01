@@ -1,42 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 22:08:42 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:07:55 by ego              ###   ########.fr       */
+/*   Created: 2024/10/02 00:18:45 by ego               #+#    #+#             */
+/*   Updated: 2024/10/02 00:32:31 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
+	char	*sub;
+	size_t	i;
 
-int	ft_atoi(const char *nptr)
-{
-	int	nb;
-	int	i;
-	int	sign;
-
-	nb = 0;
-	i = 0;
-	sign = 1;
-	while (ft_isspace(nptr[i]))
+	if (start >= ft_strlen(s))
+		return ("");
+	i = (size_t)start;
+	while (s[i] && (i - (size_t)start) < len)
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	sub = (char *)malloc((i - (size_t)start + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
+	i = (size_t)start;
+	while (s[i] && (i - (size_t)start) < len)
 	{
-		sign = -(nptr[i] - 44);
+		sub[i - (size_t)start] = s[i];
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		nb = nb * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (nb * sign);
+	sub[i - (size_t)start] = '\0';
+	return (sub);
 }

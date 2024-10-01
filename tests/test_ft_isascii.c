@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_isascii.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:55:35 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 16:55:26 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:29 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_isascii(void)
 		if (isascii(i) == ft_isascii(i))
 			success++;
 		else
-			printf("%sft_isascii.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, isascii(i), ft_isascii(i), RESET);
+			printf("%sft_isascii.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, isascii(i), ft_isascii(i), RESET);
 	}
 	if (success == 500)
 	{

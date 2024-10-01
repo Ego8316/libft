@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_toupper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:27:44 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 17:28:18 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 23:17:48 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	test_ft_toupper(void)
 		if (toupper(i) == ft_toupper(i))
 			success++;
 		else
-			printf("%sft_toupper.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i, toupper(i), ft_toupper(i), RESET);
+			printf("%sft_toupper.c\t:\tTest %i failed: expected %i, got %i.%s\n", RED, i + 101, toupper(i), ft_toupper(i), RESET);
 	}
 	if (success == 500)
 	{

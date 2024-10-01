@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 22:08:42 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:07:55 by ego              ###   ########.fr       */
+/*   Created: 2024/10/01 23:58:02 by ego               #+#    #+#             */
+/*   Updated: 2024/10/02 00:02:03 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+char	*ft_strdup(const char *str)
 {
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
+	char	*cpy;
+	size_t	i;
 
-int	ft_atoi(const char *nptr)
-{
-	int	nb;
-	int	i;
-	int	sign;
-
-	nb = 0;
+	cpy = (char *)malloc((ft_strlen(str) + 1) * sizeof(char));
+	if (!cpy)
+		return (NULL);
 	i = 0;
-	sign = 1;
-	while (ft_isspace(nptr[i]))
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (str[i])
 	{
-		sign = -(nptr[i] - 44);
+		cpy[i] = str[i];
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		nb = nb * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (nb * sign);
+	cpy[i] = '\0';
+	return (cpy);
 }
