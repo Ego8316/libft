@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:11:42 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 12:01:11 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 14:24:23 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	test_ft_isalpha(void)
 		if (isalpha(i) == ft_isalpha(i))
 			success++;
 		else
-		{
-			printf("%sft_isalpha.c: Test %i failed : expected %i, got %i.%s\n", RED, i, isalpha(i), ft_isalpha(i), RESET);
-		}
+			printf("%sft_isalpha.c: Test %i failed: expected %i, got %i.%s\n", RED, i, isalpha(i), ft_isalpha(i), RESET);
 	}
 	if (success == 500)
 	{

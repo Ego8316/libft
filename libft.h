@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:20:42 by ego               #+#    #+#             */
-/*   Updated: 2024/08/28 21:52:55 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/01 13:35:25 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 
 // Memory utilities
-void	*ft_memset(void *dest, int c, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *b, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t len);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t len);

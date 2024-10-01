@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 11:09:41 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 12:03:38 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 14:24:25 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	test_ft_isalnum(void)
 		if (isalnum(i) == ft_isalnum(i))
 			success++;
 		else
-		{
-			printf("%sft_isalnum.c: Test %i failed : expected %i, got %i.%s\n", RED, i, isalnum(i), ft_isalnum(i), RESET);
-		}
+			printf("%sft_isalnum.c: Test %i failed: expected %i, got %i.%s\n", RED, i, isalnum(i), ft_isalnum(i), RESET);
 	}
 	if (success == 500)
 	{

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_ft_isascii.c                                  :+:      :+:    :+:   */
+/*   test_ft_isprint.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 11:55:35 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 14:24:45 by hcavet           ###   ########.fr       */
+/*   Created: 2024/10/01 13:02:38 by hcavet            #+#    #+#             */
+/*   Updated: 2024/10/01 14:24:58 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "test.h"
 
-int	test_ft_isascii(void)
+int	test_ft_isprint(void)
 {
 	int	success;
 	int	i;
@@ -21,19 +21,19 @@ int	test_ft_isascii(void)
 	i = -101;
 	while (++i < 400)
 	{
-		if (isascii(i) == ft_isascii(i))
+		if (isprint(i) == ft_isprint(i))
 			success++;
 		else
-			printf("%sft_isascii.c: Test %i failed: expected %i, got %i.%s\n", RED, i, isascii(i), ft_isascii(i), RESET);
+			printf("%sft_isprint.c: Test %i failed: expected %i, got %i.%s\n", RED, i, isprint(i), ft_isprint(i), RESET);
 	}
 	if (success == 500)
 	{
-		printf("%sft_isascii.c: OK!%s\n", GREEN, RESET);
+		printf("%sft_isprint.c: OK!%s\n", GREEN, RESET);
 		return (1);
 	}
 	else
 	{
-		printf("%sft_isascii.c: failed (%i/500)%s\n", RED, success, RESET);
+		printf("%sft_isprint.c: failed (%i/500)%s\n", RED, success, RESET);
 		return (0);
 	}
 }
