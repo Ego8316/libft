@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
+#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/09/25 20:07:06 by ego              ###   ########.fr        #
+#    Updated: 2024/10/01 11:54:15 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS	=	ft_isalnum.c	\
 			ft_isascii.c	\
 			ft_isdigit.c
 OBJS	=	$(SRCS:.c=.o)
+IDIR	=	.
 
 TDIR	=	tests/
 TMAIN	=	tests/test_libft.c
@@ -30,14 +31,16 @@ TNAME	=	test_libft
 
 all		:	$(NAME)
 
-$(NAME)	:
-			echo "Compiling object files..."
-			$(CC) $(CFLAGS) -c $(SRCS) -I .
+$(NAME)	:	header	$(OBJS)
 			echo "Creating archive..."
 			$(AR) $(NAME) $(OBJS)
 			echo "Generating index..."
 			ranlib $(NAME)
-			echo "[OK] libft is ready !"
+			echo "$(GREEN)[OK] libft is ready!$(RESET)"
+
+.c.o	:
+			echo "Compiling $<..."
+			$(CC) $(CFLAGS) -I $(IDIR) -c $< -o $(<:.c=.o)
 
 debug	:
 			echo "Compiling object files to debug memory issues..."
@@ -46,10 +49,12 @@ debug	:
 			$(AR) $(NAME) $(OBJS)
 			echo "Generating index..."
 			ranlib $(NAME)
-			echo "[OK] AddressSanitizer is ready !"
+			echo "$(VIOLET)[OK] AddressSanitizer is ready !$(RESET)"
 
 test	:	$(NAME)
+			echo "Compiling test files..."
 			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR)
+			echo "$(GREEN)[OK] libft tester is ready!$(RESET)"
 
 norm	:
 			norminette -R CheckForbiddenSourceHeader $(SRCS) libft.h
@@ -57,14 +62,33 @@ norm	:
 clean	:
 			echo "Removing object files..."
 			$(RM) $(OBJS)
-			echo "[OK] All object files have been removed."
+			echo "$(ORANGE)[OK] All object files have been removed.$(RESET)"
 
 fclean	:	clean
 			echo "Removing binary files..."
 			$(RM) $(NAME) $(TNAME)
-			echo "[OK] All binary files have been removed."
+			echo "$(ORANGE)[OK] All binary files have been removed.$(RESET)"
 
 re		:	fclean all
 
 .PHONY	:	all clean fclean re
-.SILENT	:	all $(NAME) $(OBJS) norm debug clean fclean re
+.SILENT	:	all $(NAME) $(OBJS) norm debug clean fclean re header test
+
+RED     = \033[31m
+ORANGE  = \033[38;5;214m
+YELLOW  = \033[33m
+GREEN   = \033[32m
+BLUE    = \033[34m
+VIOLET  = \033[38;5;93m
+ITALIC  = \033[3m
+RESET   = \033[0m
+
+header	:
+			echo "============================"
+			echo "$(RED)  _      _  _       __  _   $(RESET)"
+			echo "$(ORANGE) | |    (_)| |__   / _|| |_ $(RESET)"
+			echo "$(YELLOW) | |    | || '_ \ | |_ | __|$(RESET)"
+			echo "$(GREEN) | |___ | || |_) ||  _|| |_ $(RESET)"
+			echo "$(BLUE) |_____||_||_.__/ |_|   \__|$(RESET)"
+			echo "$(ITALIC)$(VIOLET)           by Ego           \n$(RESET)"
+			echo "============================\n"

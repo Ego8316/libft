@@ -3,17 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:56:00 by ego               #+#    #+#             */
-/*   Updated: 2024/09/25 20:04:45 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/01 12:03:25 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TEST_H
 # define TEST_H
 
-#include <stdio.h>
-#include "../libft.h"
+# define RESET	"\033[0m"
+# define RED	"\033[31m"
+# define GREEN	"\033[32m"
+
+# include <stdio.h>
+# include <stdlib.h>
+# include <ctype.h>
+# include "../libft.h"
+
+int	test_ft_isalpha(void);
+int	test_ft_isascii(void);
+int	test_ft_isalnum(void);
+int	test_ft_isdigit(void);
 
 #endif

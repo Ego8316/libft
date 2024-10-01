@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_libft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/09/25 20:05:56 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/01 12:03:01 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 int	main(void)
 {
-	printf(">%i\n", ft_isalnum('c'));
+	test_ft_isalpha();
+	test_ft_isascii();
+	test_ft_isalnum();
+	test_ft_isdigit();
 }
