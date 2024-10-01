@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 21:17:58 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 18:10:40 by hcavet           ###   ########.fr       */
+/*   Created: 2024/10/01 17:30:00 by hcavet            #+#    #+#             */
+/*   Updated: 2024/10/01 18:07:32 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -22,19 +21,11 @@ char	*ft_strchr(const char *str, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			return (s + i);
 		i++;
 	}
 	if (c == '\0')
 		return (s + i);
 	return (NULL);
-}
-
-
-
-int	main(void)
-{
-	printf("%s\n", strchr("the cake\0is a lie", 'i'));
-	return (0);
 }

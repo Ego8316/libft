@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 17:13:44 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 18:16:06 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(void)
 {
 	int	success = 0;
 
+	printf("===========================\n");
+	printf("%s     Beginning testing     %s\n", ITALIC, RESET);
 	success += test_ft_isalpha();
 	success += test_ft_isdigit();
 	success += test_ft_isalnum();
@@ -28,8 +30,11 @@ int	main(void)
 	success += test_ft_memmove();
 	success += test_ft_strlcpy();
 	success += test_ft_strlcat();
+	success += test_ft_toupper();
+	success += test_ft_tolower();
+	success += test_ft_strchr();
 	printf("===========================\n");
-	if (success == 12)
+	if (success == 15)
 		printf("%s%slibft: OK!%s\n", GREEN, BOLD, RESET);
 	else
 		printf("%s%slibft: failed%s\n", RED, BOLD, RESET);

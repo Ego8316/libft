@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 16:46:25 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 17:11:43 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 18:03:47 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int test_ft_strlcpy(void)
 	}
 	else
 	{
-		printf("%sft_strlcpy.c\t:\tfailed (%i/3)%s\n", RED, success, RESET);
+		printf("%sft_strlcpy.c\t:\tfailed (%i/5)%s\n", RED, success, RESET);
 		return (0);
 	}
 }
