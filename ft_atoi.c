@@ -1,21 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 17:26:32 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 19:48:42 by ego              ###   ########.fr       */
+/*   Created: 2024/10/01 22:08:42 by ego               #+#    #+#             */
+/*   Updated: 2024/10/01 22:45:34 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+static int	ft_isspace(int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 'a' - 'A');
-	else
-		return (c);
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int	nb;
+	int	i;
+	int	sign;
+
+	nb = 0;
+	i	= 0;
+	sign = 1;
+	while (ft_isspace(nptr[i]))
+		i++;
+	if (nptr[i] == '-' || nptr[i] == '+')
+	{
+		sign = -(nptr[i] - 44);
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		nb = nb * 10 + (nptr[i] - '0');
+		i++;
+	}
+	return (nb * sign);
 }

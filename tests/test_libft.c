@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_libft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 18:16:06 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 22:45:00 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,14 @@ int	main(void)
 	success += test_ft_toupper();
 	success += test_ft_tolower();
 	success += test_ft_strchr();
+	success += test_ft_strrchr();
+	success += test_ft_memchr();
+	success += test_ft_memcmp();
+	success += test_ft_strncmp();
+	success += test_ft_strnstr();
+	success += test_ft_atoi();
 	printf("===========================\n");
-	if (success == 15)
+	if (success == 16)
 		printf("%s%slibft: OK!%s\n", GREEN, BOLD, RESET);
 	else
 		printf("%s%slibft: failed%s\n", RED, BOLD, RESET);

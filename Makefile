@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
+#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/01 17:30:16 by hcavet           ###   ########.fr        #
+#    Updated: 2024/10/01 22:48:08 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,14 @@ SRCS	=	ft_isalpha.c	\
 			ft_strlcat.c	\
 			ft_toupper.c	\
 			ft_tolower.c	\
-			ft_strchr.c
+			ft_strchr.c		\
+			ft_strrchr.c	\
+			ft_memchr.c		\
+			ft_memcmp.c		\
+			ft_strncmp.c	\
+			ft_strnstr.c	\
+			ft_atoi.c		\
+			ft_calloc.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
@@ -64,7 +71,7 @@ debug	:
 
 test	:	$(NAME)
 			echo "Compiling test files..."
-			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR)
+			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR) -lbsd
 			echo "$(GREEN)[OK] libft tester is ready!$(RESET)"
 
 norm	:

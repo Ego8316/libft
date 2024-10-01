@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:56:00 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 18:13:58 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 22:44:51 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <ctype.h>
 # include <string.h>
 # include "../libft.h"
+# include <bsd/string.h>
 
 int	test_ft_isalpha(void);
 int	test_ft_isascii(void);
@@ -40,5 +41,11 @@ int test_ft_strlcat(void);
 int	test_ft_toupper(void);
 int	test_ft_tolower(void);
 int	test_ft_strchr(void);
+int	test_ft_strrchr(void);
+int	test_ft_memchr(void);
+int	test_ft_memcmp(void);
+int test_ft_strncmp(void);
+int	test_ft_strnstr(void);
+int	test_ft_atoi(void);
 
 #endif
