@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:15:37 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 14:42:07 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 16:56:30 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	test_ft_strlen(void)
 		if (strlen(tests[i]) == ft_strlen(tests[i]))
 			success++;
 		else
-			printf("%sft_strlen.c: Test %i failed: expected %lu, got %zu.%s\n", RED, i + 1, strlen(tests[i]), ft_strlen(tests[i]), RESET);
+			printf("%sft_strlen.c\t:\tTest %i failed: expected %lu, got %zu.%s\n", RED, i + 1, strlen(tests[i]), ft_strlen(tests[i]), RESET);
 	}
 	if (success == 3)
 	{
-		printf("%sft_strlen.c: OK!%s\n", GREEN, RESET);
+		printf("%sft_strlen.c\t:\tOK!%s\n", GREEN, RESET);
 		return (1);
 	}
 	else
 	{
-		printf("%sft_strlen.c: failed (%i/3)%s\n", RED, success, RESET);
+		printf("%sft_strlen.c\t:\tfailed (%i/3)%s\n", RED, success, RESET);
 		return (0);
 	}
 }

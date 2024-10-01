@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 14:47:38 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 17:13:44 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ int	main(void)
 	success += test_ft_strlen();
 	success += test_ft_memset();
 	success += test_ft_bzero();
-
-	if (success == 8)
-		printf("================\n%slibft: OK!%s\n", GREEN, RESET);
+	success += test_ft_memcpy();
+	success += test_ft_memmove();
+	success += test_ft_strlcpy();
+	success += test_ft_strlcat();
+	printf("===========================\n");
+	if (success == 12)
+		printf("%s%slibft: OK!%s\n", GREEN, BOLD, RESET);
 	else
-		printf("================\n%slibft: failed%s\n", RED, RESET);
+		printf("%s%slibft: failed%s\n", RED, BOLD, RESET);
 }

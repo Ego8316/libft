@@ -6,7 +6,7 @@
 #    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/01 14:36:34 by hcavet           ###   ########.fr        #
+#    Updated: 2024/10/01 17:07:46 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ SRCS	=	ft_isalpha.c	\
 			ft_isprint.c	\
 			ft_strlen.c		\
 			ft_memset.c		\
-			ft_bzero.c
+			ft_bzero.c		\
+			ft_memcpy.c		\
+			ft_memmove.c	\
+			ft_strlcpy.c	\
+			ft_strlcat.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 

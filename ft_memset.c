@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:34:49 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 14:22:32 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 15:26:10 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	i = -1;
 	while (++i < len)
-		((char *)b)[i] = (unsigned char)c;
+		((unsigned char *)b)[i] = (unsigned char)c;
 	return (b);
 }

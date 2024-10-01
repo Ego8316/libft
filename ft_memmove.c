@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 21:17:58 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 16:43:42 by hcavet           ###   ########.fr       */
+/*   Created: 2024/10/01 15:40:56 by hcavet            #+#    #+#             */
+/*   Updated: 2024/10/01 16:44:39 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t	i;
+	unsigned char		*d;
+	const unsigned char	*s = (const unsigned char *)src;
 
-	i = -1;
-	while (++i < n)
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+	if (!dst && !src && len > 0)
+		return (NULL);
+	d = (unsigned char *)dst;
+	if ((s < d) && (d < s + len))
+	{
+		while (len-- > 0)
+			d[len] = s[len];
+	}
+	else
+		ft_memcpy(dst, src, len);
 	return (dst);
-}
-
-
-int	main(void)
-{
-	printf("%p\n", memcpy(NULL, NULL, 5));
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 13:46:21 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 14:41:57 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/01 16:56:19 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	test_ft_memset(void)
 	if (memcmp(str1, str2, 10 * sizeof(char)) == 0)
 		success++;
 	else
-		printf("%sft_memset.c: Test 1 failed: expected %s, got %s.%s\n", RED, str1, str2, RESET);
+		printf("%sft_memset.c\t:\tTest 1 failed: expected %s, got %s.%s\n", RED, str1, str2, RESET);
 
 
 	// Test 2: integer array
@@ -47,7 +47,7 @@ int	test_ft_memset(void)
 		success++;
 	else
 	{
-		printf("%sft_memset.c: Test 2 failed: expected [ ", RED);
+		printf("%sft_memset.c\t:\tTest 2 failed: expected [ ", RED);
 		print_array(arr1, 10);
 		printf("], got [ ");
 		print_array(arr2, 10);
@@ -60,7 +60,7 @@ int	test_ft_memset(void)
 		success++;
 	else
 	{
-		printf("%sft_memset.c: Test 3 failed: expected [ ", RED);
+		printf("%sft_memset.c\t:\tTest 3 failed: expected [ ", RED);
 		print_array(arr1, 10);
 		printf("], got [ ");
 		print_array(arr2, 10);
@@ -69,12 +69,12 @@ int	test_ft_memset(void)
 
 	if (success == 3)
 	{
-		printf("%sft_memset.c: OK!%s\n", GREEN, RESET);
+		printf("%sft_memset.c\t:\tOK!%s\n", GREEN, RESET);
 		return (1);
 	}
 	else
 	{
-		printf("%sft_memset.c: failed (%i/3)%s\n", RED, success, RESET);
+		printf("%sft_memset.c\t:\tfailed (%i/3)%s\n", RED, success, RESET);
 		return (0);
 	}
 }
