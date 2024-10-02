@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/02 00:26:13 by ego              ###   ########.fr        #
+#    Updated: 2024/10/03 00:21:26 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,9 @@ SRCS	=	ft_isalpha.c	\
 			ft_atoi.c		\
 			ft_calloc.c		\
 			ft_strdup.c		\
-			ft_substr.c
+			ft_substr.c		\
+			ft_strjoin.c	\
+			ft_strtrim.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
@@ -62,14 +64,14 @@ $(NAME)	:	header	$(OBJS)
 			echo "Compiling $<..."
 			$(CC) $(CFLAGS) -I $(IDIR) -c $< -o $(<:.c=.o)
 
-debug	:
+debug	:	fclean
 			echo "Compiling object files to debug memory issues..."
 			$(CC) $(CFLAGS) -fsanitize=address -c $(SRCS) -I .
 			echo "Creating archive..."
 			$(AR) $(NAME) $(OBJS)
 			echo "Generating index..."
 			ranlib $(NAME)
-			echo "$(VIOLET)[OK] AddressSanitizer is ready !$(RESET)"
+			echo "$(VIOLET)[OK] AddressSanitizer is ready!$(RESET)"
 
 test	:	$(NAME)
 			echo "Compiling test files..."

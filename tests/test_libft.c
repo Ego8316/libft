@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:18:16 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/03 00:20:57 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	main(void)
 	success += test_ft_calloc();
 	success += test_ft_strdup();
 	success += test_ft_substr();
+	success += test_ft_strjoin();
+	success += test_ft_strtrim();
 	printf("===========================\n");
 	if (success == 16)
 		printf("%s%slibft: OK!%s\n", GREEN, BOLD, RESET);

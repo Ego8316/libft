@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 22:50:33 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:17:07 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/02 17:05:09 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,18 @@ int	test_ft_calloc(void)
 	free(str1);
 	free(str2);
 
-	// // Test 3: allocate memory for zero elements
-	// size = sizeof(char);
-	// str1 = (char *)calloc(0, size);
-	// str2 = (char *)ft_calloc(0, size);
-	// if (!str1 && !str2 == 0)
-	// 	success++;
-	// else
-	// 	printf("%sft_calloc.c\t:\tTest 3 failed: expected %s, got %s%s\n", RED, str1, str2, RESET);
-	// free(str1);
-	// free(str2);
+	// Test 3: allocate memory for zero elements
+	size = sizeof(char);
+	str1 = (char *)calloc(0, size);
+	str2 = (char *)ft_calloc(0, size);
+	if ((str1 && str2) || (!str1 && !str2))
+		success++;
+	else
+		printf("%sft_calloc.c\t:\tTest 3 failed: expected %p, got %p%s\n", RED, str1, str2, RESET);
+	free(str1);
+	free(str2);
 
-	if (success == 2)
+	if (success == 3)
 	{
 		printf("%sft_calloc.c\t:\tOK!%s\n", GREEN, RESET);
 		return (1);

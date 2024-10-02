@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:56:00 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:18:08 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/03 00:21:09 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ int	test_ft_atoi(void);
 int	test_ft_calloc(void);
 int	test_ft_strdup(void);
 int	test_ft_substr(void);
+int	test_ft_strjoin(void);
+int test_ft_strtrim(void);
 
 #endif

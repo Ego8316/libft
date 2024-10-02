@@ -6,31 +6,39 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 00:18:45 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 00:32:31 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/02 19:55:53 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static size_t	ft_substrlen(const char *s, unsigned int start, size_t len)
+{
+	size_t	s_len;
+
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (0);
+	if (s_len - start < len)
+		return (s_len - start);
+	return (len);
+}
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	i;
+	size_t	sub_len;
 
-	if (start >= ft_strlen(s))
-		return ("");
-	i = (size_t)start;
-	while (s[i] && (i - (size_t)start) < len)
-		i++;
-	sub = (char *)malloc((i - (size_t)start + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
+	sub_len = ft_substrlen(s, start, len);
+	sub = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
-	i = (size_t)start;
-	while (s[i] && (i - (size_t)start) < len)
-	{
-		sub[i - (size_t)start] = s[i];
-		i++;
-	}
-	sub[i - (size_t)start] = '\0';
+	i = -1;
+	while (++i < sub_len)
+		sub[i] = s[i + start];
+	sub[i] = '\0';
 	return (sub);
 }

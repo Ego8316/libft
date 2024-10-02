@@ -1,24 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 22:51:02 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 17:06:14 by ego              ###   ########.fr       */
+/*   Created: 2024/10/02 17:07:11 by ego               #+#    #+#             */
+/*   Updated: 2024/10/02 19:56:10 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	void	*array;
+	size_t	i;
+	size_t	len1;
+	size_t	len2;
+	char	*join;
 
-	array = (void *)malloc(nmemb * size);
-	if (!array)
+	if (!s1 || !s2)
 		return (NULL);
-	ft_bzero(array, nmemb * size);
-	return (array);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	join = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	if (!join)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+	{
+		join[i] = s1[i];
+		i++;
+	}
+	while (s2[i - len1])
+	{
+		join[i] = s2[i - len1];
+		i++;
+	}
+	join[i] = '\0';
+	return (join);
 }
