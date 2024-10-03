@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/03 00:21:26 by ego              ###   ########.fr        #
+#    Updated: 2024/10/03 19:29:44 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_strdup.c		\
 			ft_substr.c		\
 			ft_strjoin.c	\
-			ft_strtrim.c
+			ft_strtrim.c	\
+			ft_split.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
