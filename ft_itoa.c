@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 21:17:58 by ego               #+#    #+#             */
-/*   Updated: 2024/10/04 16:07:29 by hcavet           ###   ########.fr       */
+/*   Created: 2024/10/04 14:27:52 by hcavet            #+#    #+#             */
+/*   Updated: 2024/10/04 16:07:44 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
 static int	ft_power(int a, int n)
 {
@@ -60,16 +58,4 @@ char	*ft_itoa(int n)
 	}
 	nptr[i] = '\0';
 	return (nptr);
-}
-
-int	main(int argc, char **argv)
-{
-	char	*nptr;
-
-	(void)argc;
-	printf(">>>%i\n", ft_itoa_count_digits(atoi(argv[1])));
-	nptr = ft_itoa(atoi(argv[1]));
-	printf(">\"%s\"\n", nptr);
-	free(nptr);
-	return (0);
 }

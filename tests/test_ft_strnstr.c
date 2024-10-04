@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_strnstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 21:47:27 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 22:05:45 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/04 14:54:17 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,47 +15,47 @@
 int	test_ft_strnstr(void)
 {
 	int		success = 0;
-	char	big1[] = "There is a needle in the haystack";
-	char	big2[] = "There is not here";
-	char	big3[] = "";
-	char	little1[] = "needle";
-	char	little2[] = "";
+	char	haystack1[] = "There is a needle in the haystack";
+	char	haystack2[] = "There is not here";
+	char	haystack3[] = "";
+	char	needle1[] = "needle";
+	char	needle2[] = "";
 
-	// Test 1: little is in big, len big enough
-	if (strnstr(big1, little1, 33) == ft_strnstr(big1, little1, 33))
+	// Test 1: needle is in haystack, len big enough
+	if (strnstr(haystack1, needle1, 33) == ft_strnstr(haystack1, needle1, 33))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 1 failed: expected %s, got %s%s\n", RED, strnstr(big1, little1, 33), ft_strnstr(big1, little1, 33), RESET);
+		printf("%sft_strnstr.c\t:\tTest 1 failed: expected %s, got %s%s\n", RED, strnstr(haystack1, needle1, 33), ft_strnstr(haystack1, needle1, 33), RESET);
 	
-	// Test 2: little is in big, len not big enough
-	if (strnstr(big1, little1, 25) == ft_strnstr(big1, little1, 25))
+	// Test 2: needle is in haystack, len not big enough
+	if (strnstr(haystack1, needle1, 25) == ft_strnstr(haystack1, needle1, 25))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 2 failed: expected %s, got %s%s\n", RED, strnstr(big1, little1, 25), ft_strnstr(big1, little1, 25), RESET);
+		printf("%sft_strnstr.c\t:\tTest 2 failed: expected %s, got %s%s\n", RED, strnstr(haystack1, needle1, 25), ft_strnstr(haystack1, needle1, 25), RESET);
 	
-	// Test 3: little is not in big
-	if (strnstr(big2, little1, 33) == ft_strnstr(big2, little1, 33))
+	// Test 3: needle is not in haystack
+	if (strnstr(haystack2, needle1, 33) == ft_strnstr(haystack2, needle1, 33))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 3 failed: expected %s, got %s%s\n", RED, strnstr(big2, little1, 33), ft_strnstr(big2, little1, 33), RESET);
+		printf("%sft_strnstr.c\t:\tTest 3 failed: expected %s, got %s%s\n", RED, strnstr(haystack2, needle1, 33), ft_strnstr(haystack2, needle1, 33), RESET);
 	
-	// Test 4: little is an empty string, big is not
-	if (strnstr(big1, little2, 35) == ft_strnstr(big1, little2, 35))
+	// Test 4: needle is an empty string, haystack is not
+	if (strnstr(haystack1, needle2, 35) == ft_strnstr(haystack1, needle2, 35))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 4 failed: expected %s, got %s%s\n", RED, strnstr(big1, little2, 35), ft_strnstr(big1, little2, 35), RESET);
+		printf("%sft_strnstr.c\t:\tTest 4 failed: expected %s, got %s%s\n", RED, strnstr(haystack1, needle2, 35), ft_strnstr(haystack1, needle2, 35), RESET);
 
-	// Test 5: big is an empty string, little is not
-	if (strnstr(big3, little1, 35) == ft_strnstr(big3, little1, 35))
+	// Test 5: haystack is an empty string, needle is not
+	if (strnstr(haystack3, needle1, 35) == ft_strnstr(haystack3, needle1, 35))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 5 failed: expected %s, got %s%s\n", RED, strnstr(big3, little1, 35), ft_strnstr(big3, little1, 35), RESET);
+		printf("%sft_strnstr.c\t:\tTest 5 failed: expected %s, got %s%s\n", RED, strnstr(haystack3, needle1, 35), ft_strnstr(haystack3, needle1, 35), RESET);
 
 	// Test 6: both are empty strings
-	if (strnstr(big3, little2, 35) == ft_strnstr(big3, little2, 35))
+	if (strnstr(haystack3, needle2, 35) == ft_strnstr(haystack3, needle2, 35))
 		success++;
 	else
-		printf("%sft_strnstr.c\t:\tTest 6 failed: expected %s, got %s%s\n", RED, strnstr(big3, little2, 35), ft_strnstr(big2, little1, 35), RESET);
+		printf("%sft_strnstr.c\t:\tTest 6 failed: expected %s, got %s%s\n", RED, strnstr(haystack3, needle2, 35), ft_strnstr(haystack2, needle1, 35), RESET);
 
 	
 	if (success == 6)

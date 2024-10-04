@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
+#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/03 19:29:44 by ego              ###   ########.fr        #
+#    Updated: 2024/10/04 16:08:08 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ SRCS	=	ft_isalpha.c	\
 			ft_substr.c		\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
-			ft_split.c
+			ft_split.c		\
+			ft_itoa.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
@@ -76,7 +77,7 @@ debug	:	fclean
 
 test	:	$(NAME)
 			echo "Compiling test files..."
-			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR) -lbsd
+			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR)
 			echo "$(GREEN)[OK] libft tester is ready!$(RESET)"
 
 norm	:

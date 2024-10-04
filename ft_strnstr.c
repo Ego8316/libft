@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 21:26:54 by ego               #+#    #+#             */
-/*   Updated: 2024/10/01 22:06:54 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/04 14:58:34 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (!little[0])
-		return ((char *)big);
+	if (!needle[0])
+		return ((char *)haystack);
 	i = 0;
-	while (big[i])
+	while (haystack[i])
 	{
 		j = 0;
-		while (big[i] == little[j] && big[i] && i < len)
+		while (haystack[i] == needle[j] && haystack[i] && i < len)
 		{
 			i++;
 			j++;
 		}
-		if (!little[j])
-			return ((char *)(big + i - j));
+		if (!needle[j])
+			return ((char *)(haystack + i - j));
 		i += 1 - j;
 	}
 	return (NULL);

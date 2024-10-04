@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_libft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:55:37 by ego               #+#    #+#             */
-/*   Updated: 2024/10/03 00:20:57 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/04 16:11:32 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,10 @@ int	main(void)
 	success += test_ft_substr();
 	success += test_ft_strjoin();
 	success += test_ft_strtrim();
+	success += test_ft_split();
+	success += test_ft_itoa();
 	printf("===========================\n");
-	if (success == 16)
+	if (success == 28)
 		printf("%s%slibft: OK!%s\n", GREEN, BOLD, RESET);
 	else
 		printf("%s%slibft: failed%s\n", RED, BOLD, RESET);
