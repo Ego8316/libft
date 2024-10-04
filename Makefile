@@ -6,7 +6,7 @@
 #    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/04 16:08:08 by hcavet           ###   ########.fr        #
+#    Updated: 2024/10/04 16:23:00 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,9 @@ SRCS	=	ft_isalpha.c	\
 			ft_strjoin.c	\
 			ft_strtrim.c	\
 			ft_split.c		\
-			ft_itoa.c
+			ft_itoa.c		\
+			ft_strmapi.c	\
+			ft_striteri.c
 OBJS	=	$(SRCS:.c=.o)
 IDIR	=	.
 
