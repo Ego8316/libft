@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 00:18:45 by ego               #+#    #+#             */
-/*   Updated: 2024/10/02 19:55:53 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/07 21:05:46 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	sub_len = ft_substrlen(s, start, len);
-	sub = (char *)malloc((len + 1) * sizeof(char));
+	sub = (char *)malloc((sub_len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	i = -1;

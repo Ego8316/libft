@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 17:30:00 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/01 18:07:32 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/07 21:04:49 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strchr(const char *str, int c)
 	char	*s;
 
 	s = (char *)str;
+	if ((unsigned char)c == '\0')
+		return (s + ft_strlen(s));
 	i = 0;
 	while (s[i])
 	{
@@ -25,7 +27,5 @@ char	*ft_strchr(const char *str, int c)
 			return (s + i);
 		i++;
 	}
-	if (c == '\0')
-		return (s + i);
 	return (NULL);
 }
