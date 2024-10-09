@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 19:56:00 by ego               #+#    #+#             */
-/*   Updated: 2024/10/04 16:11:17 by hcavet           ###   ########.fr       */
+/*   Updated: 2024/10/09 02:02:56 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <ctype.h>
 # include <string.h>
 # include "../libft.h"
-// # include <bsd/string.h>
+# include <bsd/string.h>
 
 int	test_ft_isalpha(void);
 int	test_ft_isascii(void);
@@ -54,5 +54,7 @@ int	test_ft_strjoin(void);
 int test_ft_strtrim(void);
 int	test_ft_split(void);
 int	test_ft_itoa(void);
+int	test_ft_strmapi(void);
+int	test_ft_striteri(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:27:14 by ego               #+#    #+#             */
-/*   Updated: 2024/10/07 23:57:43 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/09 01:51:47 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ char	*ft_strtrim(const char *s, const char *set)
 	size_t	start;
 	size_t	end;
 
-	if (!set || !(*s) || !(*set))
-		return (ft_strdup(s));
 	if (!s)
 		return (NULL);
+	if (!set || !(*s) || !(*set))
+		return (ft_strdup(s));
 	start = ft_strtrim_get_start(s, set);
 	end = ft_strtrim_get_end(s, set, start);
 	trim = (char *)malloc((end - start + 2) * sizeof(char));

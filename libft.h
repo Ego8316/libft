@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:20:42 by ego               #+#    #+#             */
-/*   Updated: 2024/10/07 21:01:44 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/09 02:10:01 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ int		ft_tolower(int c);
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
-// File utilities
-// void	ft_putchar_fd(char c, int fd);
-// void	ft_putstr_fd(const char *s, int fd);
-// void	ft_putendl_fd(const char *s, int fd);
-// void	ft_putnbr_fd(int n, int fd);
+// File and display utilities
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(const char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 // List utilities
 // typedef struct s_list
