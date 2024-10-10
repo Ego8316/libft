@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/09 02:19:45 by ego              ###   ########.fr        #
+#    Updated: 2024/10/10 19:03:14 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,9 @@ SRCS	=	ft_isalpha.c	\
 			ft_putstr_fd.c	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c
+BSRCS	=	ft_lstnew.c
 OBJS	=	$(SRCS:.c=.o)
+BOBJS	=	$(BSRCS:.c=.o)
 IDIR	=	.
 
 TDIR	=	tests/
@@ -61,13 +63,19 @@ TNAME	=	test_libft
 
 all		:	$(NAME)
 
-$(NAME)	:	header	$(OBJS)
+$(NAME)	:	header $(OBJS)
 			echo "Creating archive..."
 			$(AR) $(NAME) $(OBJS)
 			echo "Generating index..."
 			ranlib $(NAME)
 			echo "$(GREEN)[OK] libft is ready!$(RESET)"
 
+bonus	:	$(OBJS) $(BOBJS) header
+			echo "Creating archive with bonus..."
+			$(AR) $(NAME) $(OBJS) $(BOBJS)
+			echo "Generating index..."
+			ranlib $(NAME)
+			echo "$(GREEN)[OK] libft with bonus is ready!$(RESET)"
 .c.o	:
 			echo "Compiling $<..."
 			$(CC) $(CFLAGS) -I $(IDIR) -c $< -o $(<:.c=.o)
@@ -102,7 +110,7 @@ fclean	:	clean
 re		:	fclean all
 
 .PHONY	:	all clean fclean re
-.SILENT	:	all $(NAME) $(OBJS) norm debug clean fclean re header test
+.SILENT	:	all $(NAME) $(OBJS) $(BOBJS) norm debug clean fclean re header test bonus
 
 RED     = \033[31m
 ORANGE  = \033[38;5;214m

@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:20:42 by ego               #+#    #+#             */
-/*   Updated: 2024/10/09 02:10:01 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/10 19:03:38 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,13 @@ void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 // List utilities
-// typedef struct s_list
-// {
-// 	void			*content;
-// 	struct s_list	*next;
-// }	t_list;
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
-// t_list	*ft_lstnew(void const *content);
+t_list	*ft_lstnew(void const *content);
 // void	ft_lstadd_front(t_list **lst, t_list *new);
 // int		ft_lstsize(t_list *lst);
 // t_list	*ft_lstlast(t_list *lst);
