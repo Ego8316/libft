@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
+#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/10/11 15:19:13 by ego              ###   ########.fr        #
+#    Updated: 2024/10/13 14:35:17 by hcavet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,10 @@ BSRCS	=	ft_lstnew.c			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c
+
 OBJS	=	$(SRCS:.c=.o)
 BOBJS	=	$(BSRCS:.c=.o)
 IDIR	=	.
-
-TDIR	=	tests/
-TMAIN	=	tests/test_libft.c
-TESTS	=	$(addprefix $(TDIR)test_, $(SRCS))
 
 CC		=	cc
 RM		=	rm -f
@@ -67,11 +64,10 @@ AR		=	ar rcs
 CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	libft.a
-TNAME	=	test_libft
 
 all		:	$(NAME)
 
-$(NAME)	:	header $(OBJS)
+$(NAME)	:	$(OBJS) header
 			echo "Creating archive..."
 			$(AR) $(NAME) $(OBJS)
 			echo "Generating index..."
@@ -88,31 +84,17 @@ bonus	:	$(OBJS) $(BOBJS) header
 			echo "Compiling $<..."
 			$(CC) $(CFLAGS) -I $(IDIR) -c $< -o $(<:.c=.o)
 
-debug	:	fclean
-			echo "Compiling object files to debug memory issues..."
-			$(CC) $(CFLAGS) -fsanitize=address -c $(SRCS) -I .
-			echo "Creating archive..."
-			$(AR) $(NAME) $(OBJS)
-			echo "Generating index..."
-			ranlib $(NAME)
-			echo "$(VIOLET)[OK] AddressSanitizer is ready!$(RESET)"
-
-test	:	$(NAME)
-			echo "Compiling test files..."
-			$(CC) $(CFLAGS) $(TMAIN) $(TESTS) -o $(TNAME) -L. -lft -I $(TDIR) -lbsd
-			echo "$(GREEN)[OK] libft tester is ready!$(RESET)"
-
 norm	:
-			norminette -R CheckForbiddenSourceHeader $(SRCS) libft.h
+			norminette -R CheckForbiddenSourceHeader $(SRCS) $(BSRCS) libft.h
 
 clean	:
 			echo "Removing object files..."
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(BOBJS)
 			echo "$(ORANGE)[OK] All object files have been removed.$(RESET)"
 
 fclean	:	clean
 			echo "Removing binary files..."
-			$(RM) $(NAME) $(TNAME)
+			$(RM) $(NAME)
 			echo "$(ORANGE)[OK] All binary files have been removed.$(RESET)"
 
 re		:	fclean all
@@ -136,5 +118,5 @@ header	:
 			echo "$(YELLOW) | |    | || '_ \ | |_ | __|$(RESET)"
 			echo "$(GREEN) | |___ | || |_) ||  _|| |_ $(RESET)"
 			echo "$(BLUE) |_____||_||_.__/ |_|   \__|$(RESET)"
-			echo "$(ITALIC)$(VIOLET)           by Ego           \n$(RESET)"
+			echo "$(ITALIC)$(VIOLET)           by Ego           $(RESET)"
 			echo "============================\n"

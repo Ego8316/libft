@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 18:59:32 by ego               #+#    #+#             */
-/*   Updated: 2024/10/10 19:06:04 by ego              ###   ########.fr       */
+/*   Updated: 2024/10/13 18:18:16 by hcavet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
@@ -20,6 +20,6 @@ t_list	*ft_lstnew(void const *content)
 	if (!node)
 		return (NULL);
 	node->next = NULL;
-	node->content = (void *)content;
+	node->content = content;
 	return (node);
 }
