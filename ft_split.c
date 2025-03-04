@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/03 19:29:31 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:49 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:42:41 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,26 +35,13 @@ static size_t	ft_split_count_words(const char *s, char c)
 	return (nb_words);
 }
 
-static char	*ft_strndup(const char *s, size_t n)
-{
-	char	*ndup;
-	size_t	i;
-
-	if (!n)
-		return (NULL);
-	ndup = (char *)malloc((n + 1) * sizeof(char));
-	if (!ndup)
-		return (NULL);
-	i = 0;
-	while (s[i] && i < n)
-	{
-		ndup[i] = s[i];
-		i++;
-	}
-	ndup[i] = '\0';
-	return (ndup);
-}
-
+/**
+ * @brief Entirely frees an array of strings.
+ * 
+ * @param split The array of strings to be freed.
+ * 
+ * @return NULL.
+ */
 static char	**ft_split_free(char **split)
 {
 	size_t	i;
@@ -69,6 +56,14 @@ static char	**ft_split_free(char **split)
 	return (NULL);
 }
 
+/** 
+ * @brief Computes the length of the next "word".
+ * 
+ * @param s The pointer to the beginning of the word.
+ * @param c The delimiter character.
+ * 
+ * @return The length of the word.
+ */
 static size_t	ft_split_get_word_len(const char *s, char c)
 {
 	size_t	word_len;
@@ -82,6 +77,15 @@ static size_t	ft_split_get_word_len(const char *s, char c)
 	return (word_len);
 }
 
+/**
+ * @brief Splits the string s by using the character c as a delimiter.
+ * The given array is NULL-ended.
+ * 
+ * @param s The string to be split.
+ * @param c The delimiter character.
+ * 
+ * @return The allocated array of strings, NULL if allocation fails.
+ */
 char	**ft_split(const char *s, char c)
 {
 	char	**split;

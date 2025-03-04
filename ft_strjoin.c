@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 17:07:11 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:54 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:04:46 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/** 
+ * @brief Concatenates two strings into one.
+ * 
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * 
+ * @return The allocated concatenated string, NULL
+ * if allocation fails or one of the two strings is NULL.
+ */
 char	*ft_strjoin(const char *s1, const char *s2)
 {
 	size_t	i;

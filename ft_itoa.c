@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/04 14:27:52 by hcavet            #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:17 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:28:46 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Computes the result of a to the power n.
+ * 
+ * @param a Exponential base.
+ * @param n Exponent.
+ * 
+ * @return The result of a to the power n.
+ */
 static int	ft_power(int a, int n)
 {
 	if (n < 0)
@@ -21,6 +29,13 @@ static int	ft_power(int a, int n)
 	return (1);
 }
 
+/**
+ * @brief Computes the number of digits of the integer n.
+ * 
+ * @param n The integer n.
+ * 
+ * @return The number of digits.
+ */
 static int	ft_itoa_count_digits(int n)
 {
 	int	digits;
@@ -36,6 +51,14 @@ static int	ft_itoa_count_digits(int n)
 	return (digits);
 }
 
+/**
+ * @brief Gives a string representing the integer received as an argument.
+ * Handles negative numbers.
+ * 
+ * @param n Number to be converted.
+ * 
+ * @return The allocated converted string, NULL if allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char	*nptr;

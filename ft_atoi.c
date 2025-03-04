@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 22:08:42 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:06 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:50:42 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
-{
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
-
+/** 
+ * @brief Converts a string to an integer.
+ * 
+ * @param str The string to convert.
+ * 
+ * @return The integer value of the string.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	nb;
@@ -33,6 +35,8 @@ int	ft_atoi(const char *nptr)
 		sign = -(nptr[i] - 44);
 		i++;
 	}
+	if (sign < 0 && !ft_strcmp("2147483648", nptr + i))
+		return (-2147483648);
 	while (ft_isdigit(nptr[i]))
 	{
 		nb = nb * 10 + (nptr[i] - '0');

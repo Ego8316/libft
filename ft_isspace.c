@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/01 17:24:07 by hcavet            #+#    #+#             */
-/*   Updated: 2025/03/04 17:07:48 by ego              ###   ########.fr       */
+/*   Created: 2025/03/04 17:08:23 by ego               #+#    #+#             */
+/*   Updated: 2025/03/04 17:10:15 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /** 
- * @brief Converts a character to uppercase.
+ * @brief Checks if a character is a space.
  * 
- * @param c The character to convert.
+ * @param c The character to check.
  * 
- * @return The uppercase equivalent of the character,
- * or the character itself if it's not lowercase.
+ * @return 1 if the character is a space, 0 otherwise.
  */
-int	ft_toupper(int c)
+int	ft_isspace(int c)
 {
-	if (c >= 'a' && c <= 'z')
-		return (c + 'A' - 'a');
-	else
-		return (c);
+	return (c == ' ' || (c >= '\t' && c <= '\r'));
 }

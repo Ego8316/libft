@@ -3,15 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 18:27:14 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:35:11 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:25:03 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Goes through the string s to search for
+ * the first occurence of the character c. If found,
+ * returns 1, 0 otherwise.
+ * 
+ * @param c Character to find.
+ * @param s String to be searched.
+ * 
+ * @return 1 if found, 0 otherwise.
+ */
 static int	ft_char_in_str(int c, const char *s)
 {
 	size_t	i;
@@ -26,6 +36,14 @@ static int	ft_char_in_str(int c, const char *s)
 	return (0);
 }
 
+/**
+ * @brief Gets the start index of the trimmed string from the original string.
+ * 
+ * @param s The original string.
+ * @param set The set of characters to be removed.
+ * 
+ * @return The start index.
+ */
 static size_t	ft_strtrim_get_start(const char *s, const char *set)
 {
 	size_t	start;
@@ -36,6 +54,15 @@ static size_t	ft_strtrim_get_start(const char *s, const char *set)
 	return (start);
 }
 
+/**
+ * @brief Gets the end index of the trimmed string from the original string.
+ * 
+ * @param s The original string.
+ * @param set The set of characters to be removed.
+ * @param start The start index.
+ * 
+ * @return The end index.
+ */
 static size_t	ft_strtrim_get_end(const char *s, const char *set, size_t start)
 {
 	size_t	end;
@@ -48,6 +75,15 @@ static size_t	ft_strtrim_get_end(const char *s, const char *set, size_t start)
 	return (end);
 }
 
+/** 
+ * @brief Allocates memory and returns a copy of s with characters from
+ * set removed from the beginning and the end.
+ * 
+ * @param s The string to be trimmed.
+ * @param set The string containing the set of characters to be removed.
+ * 
+ * @return The allocated trimmed string, NULL if allocation fails.
+ */
 char	*ft_strtrim(const char *s, const char *set)
 {
 	char	*trim;

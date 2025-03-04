@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 23:58:02 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:52 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:19:18 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/** 
+ * @brief Creates a duplicate of a string.
+ * 
+ * @param s The string to duplicate.
+ * 
+ * @return The allocated duplicated string, NULL if allocation fails.
+ */
 char	*ft_strdup(const char *str)
 {
 	char	*cpy;

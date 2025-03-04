@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 02:10:38 by ego               #+#    #+#             */
-/*   Updated: 2024/10/13 14:34:48 by hcavet           ###   ########.fr       */
+/*   Updated: 2025/03/04 17:29:37 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/** 
+ * @brief Writes a string to a file descriptor.
+ * 
+ * @param s The string to write.
+ * @param fd The file descriptor.
+ */
 void	ft_putstr_fd(const char *s, int fd)
 {
 	while (*s)

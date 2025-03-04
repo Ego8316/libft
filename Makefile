@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hcavet <hcavet@student.42.fr>              +#+  +:+       +#+         #
+#    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2024/11/01 13:04:23 by hcavet           ###   ########.fr        #
+#    Updated: 2025/03/04 17:32:51 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS	=	ft_isalpha.c		\
 			ft_isalnum.c		\
 			ft_isascii.c		\
 			ft_isprint.c		\
+			ft_isspace.c		\
 			ft_strlen.c			\
 			ft_memset.c			\
 			ft_bzero.c			\
@@ -28,11 +29,13 @@ SRCS	=	ft_isalpha.c		\
 			ft_strrchr.c		\
 			ft_memchr.c			\
 			ft_memcmp.c			\
+			ft_strcmp.c			\
 			ft_strncmp.c		\
 			ft_strnstr.c		\
 			ft_atoi.c			\
 			ft_calloc.c			\
 			ft_strdup.c			\
+			ft_strndup.c		\
 			ft_substr.c			\
 			ft_strjoin.c		\
 			ft_strtrim.c		\
@@ -43,7 +46,8 @@ SRCS	=	ft_isalpha.c		\
 			ft_putchar_fd.c		\
 			ft_putstr_fd.c		\
 			ft_putendl_fd.c		\
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c		\
+			get_next_line.c
 BSRCS	=	ft_lstnew.c			\
 			ft_lstadd_front.c	\
 			ft_lstsize.c		\
@@ -53,7 +57,6 @@ BSRCS	=	ft_lstnew.c			\
 			ft_lstclear.c		\
 			ft_lstiter.c		\
 			ft_lstmap.c
-
 OBJS	=	$(SRCS:.c=.o)
 BOBJS	=	$(BSRCS:.c=.o)
 IDIR	=	.
@@ -65,7 +68,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 
 NAME	=	libft.a
 
-all		:	$(NAME)
+all		:	bonus
 
 $(NAME)	:	$(OBJS) header
 			echo "Creating archive..."
