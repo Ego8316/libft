@@ -6,7 +6,7 @@
 #    By: ego <ego@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 18:54:06 by ego               #+#    #+#              #
-#    Updated: 2025/04/09 22:48:42 by ego              ###   ########.fr        #
+#    Updated: 2025/04/09 23:03:47 by ego              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS		=	ft_atoi.c			\
 				ft_strchr.c			\
 				ft_strcmp.c			\
 				ft_strdup.c			\
+				ft_stristype.c		\
 				ft_striteri.c		\
 				ft_strjoin.c		\
 				ft_strlcat.c		\

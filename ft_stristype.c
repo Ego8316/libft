@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 21:26:16 by ego               #+#    #+#             */
-/*   Updated: 2025/04/09 21:30:52 by ego              ###   ########.fr       */
+/*   Updated: 2025/04/09 23:02:40 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * 
  * @return 1 if it is only made of the given type, 0 otherwise.
  */
-int	str_istype(char *s, int *f(char))
+int	ft_stristype(char *s, int (*f)(int))
 {
 	int	i;
 

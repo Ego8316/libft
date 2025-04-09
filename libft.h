@@ -6,7 +6,7 @@
 /*   By: ego <ego@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 20:20:42 by ego               #+#    #+#             */
-/*   Updated: 2025/04/09 21:43:35 by ego              ###   ########.fr       */
+/*   Updated: 2025/04/09 23:02:28 by ego              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		ft_isspace(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_char_in_str(char c, const char *s);
-int		str_istype(char *s, int *f(char));
+int		ft_stristype(char *s, int (*f)(int));
 
 // Conversion utilities
 
