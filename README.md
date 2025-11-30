@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/main/badges/libftm.png" height="120" alt="42 Libft Badge"/>
+  <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/main/badges/libftm.png" height="150" alt="42 Libft Badge"/>
 </p>
 
 <p align="center">
