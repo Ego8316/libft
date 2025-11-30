@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-/** 
+/**
  * @brief Appends one string to another with bounds checking.
- * 
- * @param dst The destination string.
+ *
+ * @param dst The destination string (must be null-terminated).
  * @param src The source string.
- * @param size The size of the destination buffer.
- * 
+ * @param size The size of the destination buffer (including space for '\0').
+ *
  * @return The total length of the string that would have been created
  * if enough space was available.
  */

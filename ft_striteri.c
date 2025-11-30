@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/** 
+/**
  * @brief Iterates over each character of a string and applies a function to it.
- * 
- * @param s The string to iterate over.
- * @param f The function to apply to each character.
+ *
+ * @param s The string to iterate over; no action is taken if s is NULL.
+ * @param f The function to apply to each character (must not be NULL).
  */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

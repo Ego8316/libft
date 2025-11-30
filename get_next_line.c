@@ -31,7 +31,7 @@ static char	*ft_free(char *s)
  * or everything if there is no newline in the stash. Shifts the stash
  * afterwards.
  * 
- * @param line Line string.
+ * @param line Current line (can be NULL to start an empty line).
  * @param stash Stash string.
  * @param nl_pos Position of the newline in stash, -1 if none.
  * 
@@ -67,11 +67,11 @@ static char	*copy_from_stash(char *line, char *stash, int nl_pos)
 
 /**
  * @brief Reads the file and appends the content to the line until
- * finding a newline. In case of read or allocaton error, bzeros
+ * finding a newline. In case of read or allocation error, bzeros
  * the stash, frees the line and returns NULL.
  * 
  * @param fd The file descriptor to be read from.
- * @param line Line string.
+ * @param line Line string (may already contain data from the stash).
  * @param stash Stash string.
  * 
  * @return The new line, NULL if allocation or read fails.
@@ -106,8 +106,8 @@ static char	*get_to_next_nl(int fd, char *line, char *stash)
  * 
  * @param fd File descriptor to be read from.
  * 
- * @return The new allocated line. NULL if EOF is reached, file
- * descriptor is invalid or if allocation fails.
+ * @return The new allocated line. NULL if EOF is reached, the file
+ * descriptor is invalid, BUFFER_SIZE is invalid, or if allocation fails.
  */
 char	*get_next_line(int fd)
 {

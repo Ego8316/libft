@@ -13,13 +13,14 @@
 #include "libft.h"
 
 /** 
- * @brief Moves a block of memory to another location safely.
+ * @brief Moves a block of memory to another location safely, handling overlap.
  * 
  * @param dst The destination memory block.
  * @param src The source memory block.
  * @param len The number of bytes to move.
  * 
- * @return A pointer to the destination memory block.
+ * @return A pointer to the destination memory block, or NULL if both
+ * dst and src are NULL and len is non-zero.
  */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {

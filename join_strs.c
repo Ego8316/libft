@@ -16,9 +16,9 @@
  * @brief Allocates and returns a new string, which is the
  * result of the concatenation of s1, s2 and s3.
  * 
- * @param s1 First string.
- * @param s2 Second string.
- * @param s3 Third string.
+ * @param s1 First string (must not be NULL).
+ * @param s2 Second string (must not be NULL).
+ * @param s3 Third string (must not be NULL).
  * 
  * @return The new string. NULL if allocation fails.
  */

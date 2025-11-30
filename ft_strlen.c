@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-/** 
- * @brief Returns the length of a string.
- * 
- * @param s The string to measure.
- * 
- * @return The length of the string.
+/**
+ * @brief Returns the length of a null-terminated string.
+ *
+ * @param str The string to measure.
+ *
+ * @return The number of bytes before the terminating null byte.
  */
 size_t	ft_strlen(const char *str)
 {
@@ -29,12 +29,12 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-/** 
- * @brief Returns the length of a string and handles NULL string.
- * 
- * @param s The string to measure.
- * 
- * @return The length of the string, 0 is the string is NULL.
+/**
+ * @brief Returns the length of a string and handles NULL input safely.
+ *
+ * @param str The string to measure (can be NULL).
+ *
+ * @return The length of the string, 0 if the string is NULL.
  */
 size_t	ft_strlen_null(const char *str)
 {

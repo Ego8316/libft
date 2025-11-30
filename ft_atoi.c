@@ -12,12 +12,15 @@
 
 #include "libft.h"
 
-/** 
- * @brief Converts a string to an integer.
- * 
- * @param str The string to convert.
- * 
- * @return The integer value of the string.
+/**
+ * @brief Converts a numeric string to an integer, honoring leading
+ * whitespace and an optional sign.
+ *
+ * @param nptr The string to convert (must not be NULL); parsing stops
+ * at the first non-digit.
+ *
+ * @return The converted value, handling "-2147483648" explicitly and
+ * returning 0 for empty or non-numeric strings.
  */
 int	ft_atoi(const char *nptr)
 {

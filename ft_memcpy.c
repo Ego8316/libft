@@ -12,14 +12,16 @@
 
 #include "libft.h"
 
-/** 
+/**
  * @brief Copies a block of memory from one location to another.
- * 
+ * Overlapping regions result in undefined behavior.
+ *
  * @param dst The destination memory block.
  * @param src The source memory block.
  * @param n The number of bytes to copy.
- * 
- * @return A pointer to the destination memory block.
+ *
+ * @return A pointer to the destination memory block, or NULL if both
+ * dst and src are NULL and n is non-zero.
  */
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {

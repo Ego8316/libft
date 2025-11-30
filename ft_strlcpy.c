@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-/** 
+/**
  * @brief Copies a string to another buffer with bounds checking.
- * 
+ *
  * @param dst The destination buffer.
- * @param src The source string.
- * @param dstsize The size of the destination buffer.
- * 
+ * @param src The source string (must be null-terminated).
+ * @param dstsize The size of the destination buffer (including space for '\0').
+ *
  * @return The length of the source string.
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)

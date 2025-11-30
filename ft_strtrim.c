@@ -58,7 +58,7 @@ static size_t	ft_strtrim_get_end(const char *s, const char *set, size_t start)
  * @param s The string to be trimmed.
  * @param set The string containing the set of characters to be removed.
  * 
- * @return The allocated trimmed string, NULL if allocation fails.
+ * @return The allocated trimmed string, NULL if s is NULL or allocation fails.
  */
 char	*ft_strtrim(const char *s, const char *set)
 {

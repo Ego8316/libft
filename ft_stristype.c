@@ -15,7 +15,7 @@
 /**
  * @brief Checks if a string is only made of one given type.
  * 
- * @param s String to be checked.
+ * @param s String to be checked (must not be NULL).
  * @param f Function used to check the type (isspace for example).
  * 
  * @return 1 if it is only made of the given type, 0 otherwise.

@@ -18,7 +18,7 @@
  * @param a Exponential base.
  * @param n Exponent.
  * 
- * @return The result of a to the power n.
+ * @return The result of a to the power n, 0 if n is negative.
  */
 static int	ft_power(int a, int n)
 {
@@ -34,7 +34,7 @@ static int	ft_power(int a, int n)
  * 
  * @param n The integer n.
  * 
- * @return The number of digits.
+ * @return The number of digits (base 10), excluding the sign.
  */
 static int	ft_itoa_count_digits(int n)
 {

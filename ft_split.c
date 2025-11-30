@@ -12,6 +12,14 @@
 
 #include "libft.h"
 
+/**
+ * @brief Counts how many words are present in s separated by delimiter c.
+ *
+ * @param s The string to scan (must not be NULL).
+ * @param c The delimiter character.
+ *
+ * @return The number of words detected.
+ */
 static size_t	ft_split_count_words(const char *s, char c)
 {
 	size_t	i;
@@ -84,7 +92,8 @@ static size_t	ft_split_get_word_len(const char *s, char c)
  * @param s The string to be split.
  * @param c The delimiter character.
  * 
- * @return The allocated array of strings, NULL if allocation fails.
+ * @return The allocated array of strings, NULL if s is NULL or allocation
+ * fails.
  */
 char	**ft_split(const char *s, char c)
 {

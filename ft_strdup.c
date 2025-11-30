@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-/** 
- * @brief Creates a duplicate of a string.
- * 
- * @param s The string to duplicate.
- * 
+/**
+ * @brief Creates a duplicate of a null-terminated string.
+ *
+ * @param str The string to duplicate; must not be NULL.
+ *
  * @return The allocated duplicated string, NULL if allocation fails.
  */
 char	*ft_strdup(const char *str)

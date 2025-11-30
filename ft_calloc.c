@@ -12,13 +12,14 @@
 
 #include "libft.h"
 
-/** 
+/**
  * @brief Allocates memory and initializes it to zero.
- * 
+ *
  * @param nmemb The number of elements.
  * @param size The size of each element.
- * 
- * @return A pointer to the allocated memory.
+ *
+ * @return A pointer to the allocated memory, or NULL if allocation fails.
+ * The multiplication nmemb * size is not overflow-checked.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
 {

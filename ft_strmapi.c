@@ -12,14 +12,15 @@
 
 #include "libft.h"
 
-/** 
- * @brief Applies a function to each character in a string
- * and returns a new string.
- * 
- * @param s The string to modify.
- * @param f The function to apply to each character.
- * 
- * @return The modified string.
+/**
+ * @brief Applies a function to each character in a string using
+ * its index and returns a new string.
+ *
+ * @param s The string to transform (must not be NULL).
+ * @param f The function to apply to each character (must not be NULL).
+ *
+ * @return The newly allocated transformed string, or NULL if s is
+ * NULL or allocation fails.
  */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {

@@ -15,10 +15,10 @@
 /**
  * @brief Creates a duplicate of a string up to n characters.
  * 
- * @param s The string to duplicate.
+ * @param s The string to duplicate (must not be NULL).
  * @param n The maximum number of characters to duplicate.
  * 
- * @return The allocated duplicated string, NULL if allocation fails.
+ * @return The allocated duplicated string, NULL if n is 0 or allocation fails.
  */
 char	*ft_strndup(const char *s, size_t n)
 {

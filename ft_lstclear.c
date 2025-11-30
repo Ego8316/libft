@@ -14,11 +14,11 @@
 
 /**
  * @brief Deletes the content of each node and frees them afterwards.
- * 
- * @param lst The linked list to be freed.
+ *
+ * @param lst Pointer to the list head pointer to clear (must not be NULL).
  * @param del The function used to delete a node's content.
- * 
- * @return NULL.
+ *
+ * @return Nothing. Sets *lst to NULL when finished.
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

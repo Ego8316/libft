@@ -16,7 +16,7 @@
  * @brief Deletes the content of each node and frees them afterwards.
  * 
  * @param lst The linked list to be freed.
- * @param del The function used to delete a node's content.
+ * @param del The function used to delete a node's content (must not be NULL).
  * 
  * @return NULL.
  */
@@ -39,10 +39,11 @@ t_list	*ft_lstmap_free(t_list *lst, void (*del)(void *))
  * and returns a new list.
  * 
  * @param lst The linked list.
- * @param f The function to apply to each node.
- * @param del The function used to delete a node's content if needed.
+ * @param f The function to apply to each node's content (must not be NULL).
+ * @param del The function used to delete a node's content if needed
+ * (must not be NULL).
  * 
- * @return The new linked list.
+ * @return The new linked list, or NULL if lst is NULL or allocation fails.
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

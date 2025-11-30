@@ -33,7 +33,7 @@ static size_t	ft_substr_len(const char *s, unsigned int start, size_t len)
 	return (len);
 }
 
-/** 
+/**
  * @brief Extracts a substring from a string. The substring starts
  * at index start and has a maximum length of len.
  * 
@@ -41,7 +41,8 @@ static size_t	ft_substr_len(const char *s, unsigned int start, size_t len)
  * @param start The starting index of the substring.
  * @param len The length of the substring.
  * 
- * @return The allocated extracted substring.
+ * @return The allocated extracted substring (empty string when start
+ * is beyond the end), or NULL if allocation fails or s is NULL.
  */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
