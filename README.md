@@ -1,18 +1,21 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/main/badges/libftm.png" height="90" alt="42 Libft Badge"/>
+  <img src="https://raw.githubusercontent.com/ayogun/42-project-badges/main/badges/libftm.png" height="120" alt="42 Libft Badge"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/42-Project-blue"/>
-  <img src="https://img.shields.io/github/languages/code-size/ego/libft?color=5BCFFF"/>
-  <img src="https://img.shields.io/badge/Linux-0a97f5?style=for-the-badge&logo=linux&logoColor=white" height="28"/>
-  <img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white" height="28"/>
-  <img src="https://img.shields.io/badge/WSL-0a97f5?style=for-the-badge&logo=linux&logoColor=white" height="28"/>
+  <img src="https://img.shields.io/badge/42-Project-blue" height="32"/>
+  <img src="https://img.shields.io/github/languages/code-size/Ego8316/libft?color=5BCFFF" height="32"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Linux-0a97f5?style=for-the-badge&logo=linux&logoColor=white" height="32"/>
+  <img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white" height="32"/>
+  <img src="https://img.shields.io/badge/WSL-0a97f5?style=for-the-badge&logo=linux&logoColor=white" height="32"/>
 </p>
 
 # libft
 
-### 🎓 42 School – Final Grade: **Pending/100**
+### 🎓 42 School – Final Grade: **125/100**
 
 A custom C standard-library subset plus a few convenience helpers (string/memory routines, character checks, allocation helpers, singly linked lists, and `get_next_line`).
 
@@ -30,7 +33,7 @@ A custom C standard-library subset plus a few convenience helpers (string/memory
 
 ## 🚀 Installation
 ```bash
-git clone https://github.com/ego/libft.git
+git clone https://github.com/Ego8316/libft.git
 cd libft
 make        # builds libft.a (mandatory)
 make bonus  # builds bonus list functions if needed
@@ -64,4 +67,4 @@ Link your project with the generated `libft.a`, e.g. `cc your_code.c -L. -lft`.
 ---
 
 ## 📄 License
-This project follows 42 School’s academic policies; reuse outside the cursus should respect your institution’s rules.
+MIT License — see `LICENSE` for details.
