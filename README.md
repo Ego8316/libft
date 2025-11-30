@@ -31,7 +31,7 @@ A custom C standard-library subset plus a few convenience helpers (string/memory
 
 ---
 
-## 🚀 Installation
+## 🛠️ Building
 ```bash
 git clone https://github.com/Ego8316/libft.git
 cd libft
@@ -41,7 +41,7 @@ make bonus  # builds bonus list functions if needed
 
 ---
 
-## 🧰 Usage
+## 🚀 Usage
 ```c
 #include "libft.h"
 
